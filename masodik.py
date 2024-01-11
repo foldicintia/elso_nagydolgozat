@@ -34,7 +34,7 @@ def paros_osszege(lista):
     parososszeg=0
     for i in range(0,len(lista),1):
         if lista[i] % 2 == 0:
-            parososszegosszeg+=lista[i]
+            parososszeg+=lista[i]
     return parososszeg
 
 def paratlan_osszege(lista):
@@ -43,6 +43,13 @@ def paratlan_osszege(lista):
         if lista[i] % 2 != 0:
             paratlanosszeg+=lista[i]
     return paratlanosszeg
+
+
+"""def nagyobb(lista):
+    if parososszege > paratlanosszeg:
+        print("A páros számok összege a nagyobb")
+        elif parososszege < paratlanosszeg"""
+
 
 
 
