@@ -21,12 +21,12 @@ def a_feladat():
     for i in range(0,13,1):
         szam:int = random.randint(-40,150)
         lista.append(szam)
-    print(lista)
+    return lista
 
 def ketjegyuek_szama(lista):
     db=0
     for i in range(0,len(lista),1):
-        if lista[i] > 10 and lista[i] < 100:
+        if lista[i] > 9 and lista[i] < 100:
             db+=1
     return db
 
@@ -43,14 +43,5 @@ def paratlan_osszege(lista):
         if lista[i] % 2 != 0:
             paratlanosszeg+=lista[i]
     return paratlanosszeg
-
-
-"""def nagyobb(lista):
-    if parososszege > paratlanosszeg:
-        print("A páros számok összege a nagyobb")
-        elif parososszege < paratlanosszeg"""
-
-
-
 
 

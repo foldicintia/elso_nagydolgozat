@@ -19,33 +19,33 @@ A kiírásban a stadion neve és a csapatok száma szerepeljen (5p)
 from Stadionok import Stadionok
 
 def beolvas():
-    stadionok_lista=[]
+    lista=[]
     fajl=open("stadionok.txt","r",encoding="utf-8")
     fajl.readline()
-    fajl_lista=fajl.readlines()
+    nyers_lista=fajl.readlines()
     fajl.close()
 
-    for i in range(0,len(fajl_lista),1):
-        aktsor=fajl_lista[i].strip().split(";")
-        nev = int(aktsor[0])
-        helyszin = int(aktsor[1])
-        csapat_szam = int(aktsor[2])
-        elso_palyara = int(aktsor[3])
-        ut_palyara = int(aktsor[4])
+    for i in range(0,len(nyers_lista),1):
+        aktsor=nyers_lista[i]
+        elem= aktsor.strip().split(";")
+        nev = elem[0]
+        helyszin = elem[1]
+        csapat_szam: int = elem[2]
+        elso_palyara = elem[3]
+        ut_palyara = elem[4]
         stadion=Stadionok(nev,helyszin,csapat_szam,elso_palyara,ut_palyara)
-        stadionok_lista.append(stadion)
+        lista.append(stadion)
+    return lista
 
-def csap_db(lista):
+def csapatok_sz(lista):
     csapatok_szama = 0
     for i in range(0,len(lista),1):
         csapatok_szama+=lista[i].csapat_szam
-
-    return csapatok_szama
+    return csapatok_szama  # int str problemaja van 
 
 def newyork(lista):
     newyorki_cs=[]
     for i in range(0,len(lista),1):
         if lista[i].helyszin == "New York":
             newyorki_cs.append(lista[i])
-
     return newyorki_cs
